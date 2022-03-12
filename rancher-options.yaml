@@ -1,0 +1,7 @@
+hostname: rancher.closetbox.us
+replicas: 1
+ingress:
+  tls:
+    source: letsEncrypt
+letsEncrypt:
+  email: peterglenn1999@gmail.com
