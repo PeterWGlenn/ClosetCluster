@@ -18,3 +18,8 @@ sudo helm install rancher rancher-latest/rancher --namespace cattle-system -f ra
 
 # Update rancher with new options
 sudo helm upgrade rancher rancher-latest/rancher -f rancher-options.yaml --kubeconfig=/etc/rancher/k3s/k3s.yaml -n cattle-system
+
+# Longhorn
+sudo helm repo add longhorn https://charts.longhorn.io --kubeconfig=/etc/rancher/k3s/k3s.yaml
+sudo helm repo update --kubeconfig=/etc/rancher/k3s/k3s.yaml
+sudo helm install longhorn longhorn/longhorn --namespace longhorn-system --create-namespace --kubeconfig=/etc/rancher/k3s/k3s.yaml
